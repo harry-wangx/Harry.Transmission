@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net40;net45;netstandard2.0;</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Harry.Transmission.Abstractions\Harry.Transmission.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
