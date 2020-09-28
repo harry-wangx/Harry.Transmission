@@ -3,13 +3,7 @@ using System.Collections.Generic;
 
 namespace Harry.Transmission
 {
-    public interface IDataList<T>
-#if NET40
-        : IList<T>
-#else
-        : IReadOnlyList<T>
-#endif
-
+    public interface IDataList<T> : IReadOnlyList<T>
     {
         void AddRange(IEnumerable<T> collection);
 

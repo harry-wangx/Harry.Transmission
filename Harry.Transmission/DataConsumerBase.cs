@@ -22,13 +22,7 @@ namespace Harry.Transmission
         /// <param name="indexes">已消费数据的索引信息</param>
         /// <returns>消费成功返回True,否则返回False</returns>
 
-        public virtual bool TryConsume(
-#if NET40
-            IList<T> dataList,
-#else
-            IReadOnlyList<T> dataList,
-#endif
-            out IList<IndexInfo> indexes
+        public virtual bool TryConsume(IReadOnlyList<T> dataList, out IList<IndexInfo> indexes
         )
         {
             indexes = null;
@@ -75,13 +69,7 @@ namespace Harry.Transmission
         /// <param name="frame">帧对像</param>
         /// <returns>成功则返回True;否则返回False</returns>
 
-        protected abstract bool TryParse(
-#if NET40
-            IList<T> dataList,
-#else
-            IReadOnlyList<T> dataList,
-#endif
-            int index, out T[] frame);
+        protected abstract bool TryParse(IReadOnlyList<T> dataList, int index, out T[] frame);
 
         /// <summary>
         /// 消费拿到的数据
@@ -96,13 +84,7 @@ namespace Harry.Transmission
         /// <param name="dataList"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        protected virtual bool CheckFrameTitle(
-#if NET40
-            IList<T> dataList,
-#else
-            IReadOnlyList<T> dataList,
-#endif
-            int index)
+        protected virtual bool CheckFrameTitle(IReadOnlyList<T> dataList, int index)
         {
             if (FrameTitle == null || FrameTitle.Length <= 0)
                 throw new Exception("请先设置帧头");

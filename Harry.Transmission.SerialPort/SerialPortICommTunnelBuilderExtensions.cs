@@ -4,7 +4,7 @@ using System.IO.Ports;
 
 namespace Harry.Transmission
 {
-    public static class ICommTunnelBuilderExtensions
+    public static class SerialPortICommTunnelBuilderExtensions
     {
         /// <summary>
         /// 添加串口通道

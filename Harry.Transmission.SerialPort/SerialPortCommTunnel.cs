@@ -56,7 +56,7 @@ namespace Harry.Transmission.SerialPort
 
             _disposed = true;
 
-            _serialPort.DataReceived += SerialPort_DataReceived;
+            _serialPort.DataReceived -= SerialPort_DataReceived;
 
             if (_serialPort != null)
             {

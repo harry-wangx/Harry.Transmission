@@ -5,23 +5,6 @@ using System.Linq;
 
 namespace Harry.Transmission
 {
-#if NET40
-    public class DataList<T> : List<T>
-    {
-        public DataList() : base()
-        {
-        }
-
-        public DataList(int capacity) : base(capacity)
-        {
-        }
-
-        public DataList(IEnumerable<T> collection) : base(collection)
-        {
-
-        }
-    }
-#else
     public class DataList<T> : IDataList<T>
     {
         private List<T> data = null;
@@ -76,5 +59,4 @@ namespace Harry.Transmission
             return data.GetEnumerator();
         }
     }
-#endif
 }
