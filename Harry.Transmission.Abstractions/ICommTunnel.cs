@@ -11,7 +11,7 @@ namespace Harry.Transmission
     {
         event EventHandler<DataReceivedEventArgs> DataReceived;
 
-        IDataCollector<byte> Collector { get; }
+        //IDataCollector<byte> Collector { get; }
 
         void Send(byte[] data);
 
